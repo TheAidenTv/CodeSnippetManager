@@ -9,7 +9,9 @@ public partial class MainPage : ContentPage
 
 	public void OnExploreClicked(object sender, EventArgs e)
 	{
-        Navigation.PushAsync(new SnippetListPage());
+        Shell shell = Shell.Current;
+        ShellContent SnippetList = shell.FindByName<ShellContent>("Snippets");
+        shell.CurrentItem = SnippetList;
     }
 }
 
